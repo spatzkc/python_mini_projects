@@ -30,14 +30,14 @@ def make_dungeon(list_of_rooms):
 
 class Room:
     def __init__(self, coordinates, description, door_list):
+        self.x = coordinates[0]
+        self.y = coordinates[1]
         self.description= description
         self.door_list = door_list
     
     player_is_here = False
     
 
-
-room_list = []
 #===============================================================================
 # System for tracking player movement through rooms.  Uses (x,y) coordinates.
 # Adds or subtracts numbers to (x,y) coordinates.
