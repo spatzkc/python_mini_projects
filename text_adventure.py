@@ -47,7 +47,9 @@ def user_input():
     while game_running:
         walk_direction = raw_input("Choose a direction (N, E, S, W): ").upper()
         if walk_direction == "N":
+            #adjusts y-coordinates
             player_coordinates[1] += 1
         elif walk_direction == "S":
+            #adjustst y-coordinates
             player_coordinates[1] -= 1
             
