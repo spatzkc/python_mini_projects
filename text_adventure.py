@@ -1,5 +1,13 @@
 #!usr/bin/env python
 
+#===============================================================================
+# 2/2/17
+# Kevin Spatz and Vincent Gammill
+# A Text-Based Adventure Game to explore python.
+#===============================================================================
+
+# A list of lists, with each of the inner lists holding all data to create a 
+# room object.
 room_list = [ 
                 [(0,0), "An entryway", [1,0,0,0] ]
                 [(1,0), "A green storage closet with copier", [1,0,0,0] ]
@@ -9,6 +17,14 @@ room_list = [
                                                         [0,0,0,1] ]
             ]
 
+
+def make_dungeon(list_of_rooms):
+    #===========================================================================
+    # Pre: starts with a 2D array full of room info
+    # Post: a dictionary of room objects with coordinate tuple (x,y) as key
+    #===========================================================================
+    for i in list_of_rooms:
+        rooms_dictionary = [i[0]] = Room( i[0], i[1], i[2] )
 
 class Room:
     def __init__(self, door_list, description):
