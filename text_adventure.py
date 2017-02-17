@@ -30,8 +30,8 @@ def user_input():
     game_running = True
     while game_running:
         walk_direction = raw_input("Choose a direction (N, E, S, W): ").upper()
-        if walk_direction == N:
+        if walk_direction == "N":
             player_coordinates[1] += 1
-        elif walk_direction == S:
+        elif walk_direction == "S":
             player_coordinates[1] -= 1
             
