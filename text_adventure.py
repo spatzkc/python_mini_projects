@@ -11,18 +11,13 @@ room_list = [
 
 
 class Room:
-    def __init__(self, description, items, n_door, e_door, s_door, w_door):
+    def __init__(self, door_list, description):
         self.description= description
-        self.items = items
-        self.n_door = n_door
-        self.e_door = e_door
-        self.s_door = s_door
-        self.w_door = w_door
+        self.door_list = door_list
     
     player_is_here = False
     
 
 
 
-if Room.player_is_here(self) = True:
-    print self.description
+room_list = []
