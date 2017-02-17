@@ -62,5 +62,5 @@ def user_input():
             #adjusts x-coordinates
             player_coordinates[0] -= 1
         else:
-            print "Sorry, that is not a valid input.  Please input N, S, E, or \
-             W."
+            print ("Sorry, that is not a valid input.  Please input N, S, E, or \
+             W.")
