@@ -41,6 +41,7 @@ room_list = []
 # Adds or subtracts numbers to (x,y) coordinates.
 #===============================================================================
 player_coordinates = [0, 0]
+#player start position
 def user_input():
     #allows player to move different directions in the game
     game_running = True
@@ -50,6 +51,14 @@ def user_input():
             #adjusts y-coordinates
             player_coordinates[1] += 1
         elif walk_direction == "S":
-            #adjustst y-coordinates
+            #adjusts y-coordinates
             player_coordinates[1] -= 1
-            
+        elif walk_direction == "E":
+            #adjusts x-coordinates
+            player_coordinates[0] += 1
+        elif walk_direction == "W":
+            #adjusts x-coordinates
+            player_coordinates[0] -= 1
+        else:
+            print "Sorry, that is not a valid input.  Please input N, S, E, or \
+             W."
