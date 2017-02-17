@@ -19,9 +19,11 @@ class Room:
     
 
 
-
 room_list = []
-
+#===============================================================================
+# System for tracking player movement through rooms.  Uses (x,y) coordinates.
+# Adds or subtracts numbers to (x,y) coordinates.
+#===============================================================================
 player_coordinates = [0, 0]
 def user_input():
     #allows player to move different directions in the game
