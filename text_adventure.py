@@ -23,11 +23,13 @@ def make_dungeon(list_of_rooms):
     # Pre: starts with a 2D array full of room info
     # Post: a dictionary of room objects with coordinate tuple (x,y) as key
     #===========================================================================
+    rooms_dictionary = {}
     for i in list_of_rooms:
-        rooms_dictionary = [i[0]] = Room( i[0], i[1], i[2] )
+        rooms_dictionary[i[0]] = Room( i[0], i[1], i[2] )
+    return rooms_dictionary
 
 class Room:
-    def __init__(self, door_list, description):
+    def __init__(self, coordinates, description, door_list):
         self.description= description
         self.door_list = door_list
     
