@@ -21,3 +21,15 @@ class Room:
 
 
 room_list = []
+
+player_coordinates = [0, 0]
+def user_input():
+    #allows player to move different directions in the game
+    game_running = True
+    while game_running:
+        walk_direction = raw_input("Choose a direction (N, E, S, W): ").upper()
+        if walk_direction == N:
+            player_coordinates[1] += 1
+        elif walk_direction == S:
+            player_coordinates[1] -= 1
+            
