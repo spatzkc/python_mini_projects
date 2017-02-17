@@ -6,14 +6,28 @@ class Room:
         self.e_door = e_door
         self.s_door = s_door
         self.w_door = w_door
-    pass
+    
+    player_is_here = False
+    
 
 class Door:
     unlocked = True
-    pass
+    
+    def __init__(self):
+        pass
 
 class Player:
     inventory = []
-    
+
+    def __init__(self):
+        
     def move(self, direction):
         pass
+
+room1 = Room("You stand in an empty, windowless chamber.  The stone walls are damp and covered in moss.  The room has doors on the north, east, and west walls.", \
+             [], True, True, False, True)
+
+room1.player_is_here = True
+
+if Room.player_is_here(self) = True:
+    print self.description
