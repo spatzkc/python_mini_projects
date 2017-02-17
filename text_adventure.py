@@ -42,13 +42,13 @@ room_list = []
 # System for tracking player movement through rooms.  Uses (x,y) coordinates.
 # Adds or subtracts numbers to (x,y) coordinates.
 #===============================================================================
-player_coordinates = [0, 0]
-#player start position
-def user_input():
+
+def check_for_door(player_room, walk_direction):
+    pass
+
+def go_through_door(player_coordinates, walk_direction):
     #allows player to move different directions in the game
-    game_running = True
-    while game_running:
-        walk_direction = raw_input("Choose a direction (N, E, S, W): ").upper()
+
         if walk_direction == "N":
             #adjusts y-coordinates
             player_coordinates[1] += 1
@@ -64,3 +64,18 @@ def user_input():
         else:
             print ("Sorry, that is not a valid input.  Please input N, S, E, or \
              W.")
+            
+def main():
+    room_dict = make_dungeon(room_list)
+    #generates rooms in dungeon
+    player_coordinates = [0, 0]
+    #player start position
+    game_running = True
+    while game_running:
+        walk_direction = raw_input("Choose a direction (N, E, S, W): ").upper()
+        x = player_coordinates[0]
+        y = player_coordinates[1]
+        check_for_door(room_dict[(x, y)], walk_direction)
+        
+        
+        
