@@ -35,5 +35,19 @@ class Room:
     
 
 
-
 room_list = []
+#===============================================================================
+# System for tracking player movement through rooms.  Uses (x,y) coordinates.
+# Adds or subtracts numbers to (x,y) coordinates.
+#===============================================================================
+player_coordinates = [0, 0]
+def user_input():
+    #allows player to move different directions in the game
+    game_running = True
+    while game_running:
+        walk_direction = raw_input("Choose a direction (N, E, S, W): ").upper()
+        if walk_direction == N:
+            player_coordinates[1] += 1
+        elif walk_direction == S:
+            player_coordinates[1] -= 1
+            
