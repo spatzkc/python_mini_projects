@@ -6,13 +6,18 @@
 # A Text-Based Adventure Game to explore python.
 #===============================================================================
 
-# A list of lists, with each of the inner lists holding all data to create a 
+#===============================================================================
+# # A list of lists, with each of the inner lists holding all data to create a
 # room object.
+#[(room coordinates), "Room description", 
+#[boolean statements for existence of N, E, S, W doors] ] 
+#===============================================================================
+
 room_list = [ 
-                [(0,0), "An entryway", [1,0,0,0] ]
-                [(1,0), "A green storage closet with copier", [1,0,0,0] ]
-                [(0,1), "A moldy couch sits in this room", [0,1,1,0] ]
-                [(1,1), "A shrine to many-tentacled god", [0,1,1,1] ]
+                [(0,0), "An entryway", [1,0,0,0] ],
+                [(1,0), "A green storage closet with copier", [1,0,0,0] ],
+                [(0,1), "A moldy couch sits in this room", [0,1,1,0] ],
+                [(1,1), "A shrine to many-tentacled god", [0,1,1,1] ],
                 [(2,1), "This hallway ends where the ceiling collapsed", 
                                                         [0,0,0,1] ]
             ]
@@ -44,7 +49,7 @@ room_list = []
 #===============================================================================
 
 def check_for_door(player_room, walk_direction):
-    pass
+    if walk_direction == "N" and 
 
 def go_through_door(player_coordinates, walk_direction):
     #allows player to move different directions in the game
