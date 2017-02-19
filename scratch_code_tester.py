@@ -23,7 +23,7 @@ def make_dungeon(list_of_rooms):
         rooms_dictionary[i[0]] = Room( i[0], i[1], i[2] )
     return rooms_dictionary
 
-print make_dungeon(list_of_rooms)
+print (make_dungeon(room_list))
 
 #def check_for_door(player_room, walk_direction):
 

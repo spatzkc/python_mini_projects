@@ -48,12 +48,23 @@ room_list = []
 # Adds or subtracts numbers to (x,y) coordinates.
 #===============================================================================
 
-def check_for_door(player_room, walk_direction):
-    if walk_direction == "N" and 
+def check_for_door(x, y, room_dict, walk_direction):
+    #Looks in the room the player is standing in and 
+    #checks to see if there is a door in the direction the player wants to walk.
+    if walk_direction == "N" and room_dict[x, y].door_list[0] == 1:
+        return True
+    elif walk_direction == "E" and room_dict[x, y].door_list[1] == 1:
+        return True
+    elif walk_direction == "S" and room_dict[x, y].door_list[2] == 1:
+        return True
+    elif walk_direction == "W" and room_dict[x, y].door_list[3] == 1:
+        return True
+    else:
+        return False
+
 
 def go_through_door(player_coordinates, walk_direction):
     #allows player to move different directions in the game
-
         if walk_direction == "N":
             #adjusts y-coordinates
             player_coordinates[1] += 1
@@ -80,7 +91,12 @@ def main():
         walk_direction = raw_input("Choose a direction (N, E, S, W): ").upper()
         x = player_coordinates[0]
         y = player_coordinates[1]
-        check_for_door(room_dict[(x, y)], walk_direction)
+        if check_for_door(x, y, room_dict, walk_direction) == True:
+            go_through_door(player_coordinates, walk_direction)
+        else:
+            print ("Sorry, you cannot go that way.")
+        
+        
         
         
         
