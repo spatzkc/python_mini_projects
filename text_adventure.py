@@ -51,13 +51,13 @@ room_list = []
 def check_for_door(x, y, room_dict, walk_direction):
     #Looks in the room the player is standing in and 
     #checks to see if there is a door in the direction the player wants to walk.
-    if walk_direction == "N" and room_dict[x, y].door_list[0] == 1:
+    if walk_direction == "N" and room_dict[(x, y)].door_list[0] == 1:
         return True
-    elif walk_direction == "E" and room_dict[x, y].door_list[1] == 1:
+    elif walk_direction == "E" and room_dict[(x, y)].door_list[1] == 1:
         return True
-    elif walk_direction == "S" and room_dict[x, y].door_list[2] == 1:
+    elif walk_direction == "S" and room_dict[(x, y)].door_list[2] == 1:
         return True
-    elif walk_direction == "W" and room_dict[x, y].door_list[3] == 1:
+    elif walk_direction == "W" and room_dict[(x, y)].door_list[3] == 1:
         return True
     else:
         return False
@@ -81,6 +81,10 @@ def go_through_door(player_coordinates, walk_direction):
             print ("Sorry, that is not a valid input.  Please input N, S, E, or \
              W.")
             
+def print_room_description(x, y, room_dict):
+    #prints out room description once player enters room
+    print (room_dict[(x, y)].description)
+            
 def main():
     room_dict = make_dungeon(room_list)
     #generates rooms in dungeon
@@ -95,6 +99,7 @@ def main():
             game_running = False
         elif check_for_door(x, y, room_dict, walk_direction) == True:
             go_through_door(player_coordinates, walk_direction)
+            print_room_description(x, y, room_dict)
         else:
             print ("Sorry, you cannot go that way.")
         
