@@ -91,7 +91,9 @@ def main():
         walk_direction = raw_input("Choose a direction (N, E, S, W): ").upper()
         x = player_coordinates[0]
         y = player_coordinates[1]
-        if check_for_door(x, y, room_dict, walk_direction) == True:
+        if walk_direction == "QUIT":
+            game_running = False
+        elif check_for_door(x, y, room_dict, walk_direction) == True:
             go_through_door(player_coordinates, walk_direction)
         else:
             print ("Sorry, you cannot go that way.")
