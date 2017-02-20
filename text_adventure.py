@@ -48,16 +48,16 @@ class Room:
 # Adds or subtracts numbers to (x,y) coordinates.
 #===============================================================================
 
-def check_for_door(x, y, room_dict, walk_direction):
+def check_for_door(current_room, walk_direction):
     #Looks in the room the player is standing in and 
     #checks to see if there is a door in the direction the player wants to walk.
-    if walk_direction == "N" and room_dict[(x, y)].door_list[0] == 1:
+    if walk_direction == "N" and current_room.door_list[0] == 1:
         return True
-    elif walk_direction == "E" and room_dict[(x, y)].door_list[1] == 1:
+    elif walk_direction == "E" and current_room.door_list[1] == 1:
         return True
-    elif walk_direction == "S" and room_dict[(x, y)].door_list[2] == 1:
+    elif walk_direction == "S" and current_room.door_list[2] == 1:
         return True
-    elif walk_direction == "W" and room_dict[(x, y)].door_list[3] == 1:
+    elif walk_direction == "W" and current_room.door_list[3] == 1:
         return True
     else:
         return False
@@ -80,7 +80,8 @@ def go_through_door(player_coordinates, walk_direction):
         else:
             print ("Sorry, that is not a valid input.  Please input N, S, E, or \
              W.")
-            
+        return player_coordinates    
+        
 def print_room_description(x, y, room_dict):
     #prints out room description once player enters room
     print (room_dict[(x, y)].description)
@@ -92,13 +93,16 @@ def main():
     #player start position
     game_running = True
     while game_running:
-        walk_direction = raw_input("Choose a direction (N, E, S, W): ").upper()
         x = player_coordinates[0]
         y = player_coordinates[1]
+        curr_room = room_dict[(x,y)]
+        walk_direction = raw_input("Choose a direction (N, E, S, W): ").upper() 
+
         if walk_direction == "QUIT":
             game_running = False
-        elif check_for_door(x, y, room_dict, walk_direction) == True:
-            go_through_door(player_coordinates, walk_direction)
+        elif check_for_door(curr_room, walk_direction) == True:
+            player_coordinates = go_through_door(player_coordinates, \
+                                                 walk_direction)
             print_room_description(x, y, room_dict)
         else:
             print ("Sorry, you cannot go that way.")
