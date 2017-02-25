@@ -1,4 +1,4 @@
-#!usr/bin/env python
+#!/usr/bin/env python
 
 #===============================================================================
 # 2/2/17
@@ -42,7 +42,7 @@ class Room:
     
 
 
-room_list = []
+
 #===============================================================================
 # System for tracking player movement through rooms.  Uses (x,y) coordinates.
 # Adds or subtracts numbers to (x,y) coordinates.
@@ -78,8 +78,8 @@ def go_through_door(player_coordinates, walk_direction):
             #adjusts x-coordinates
             player_coordinates[0] -= 1
         else:
-            print ("Sorry, that is not a valid input.  Please input N, S, E, or \
-             W.")
+            print ("Sorry, that is not a valid input.  Please input N, S, E, \
+            or W.")
             
 def print_room_description(x, y, room_dict):
     #prints out room description once player enters room
@@ -92,18 +92,19 @@ def main():
     #player start position
     game_running = True
     while game_running:
-        walk_direction = raw_input("Choose a direction (N, E, S, W): ").upper()
         x = player_coordinates[0]
         y = player_coordinates[1]
+        print_room_description(x, y, room_dict)
+        walk_direction = raw_input("Choose a direction (N, E, S, W): ").upper()
         if walk_direction == "QUIT":
             game_running = False
         elif check_for_door(x, y, room_dict, walk_direction) == True:
             go_through_door(player_coordinates, walk_direction)
-            print_room_description(x, y, room_dict)
         else:
             print ("Sorry, you cannot go that way.")
         
-        
-        
+
+main()
+
         
         

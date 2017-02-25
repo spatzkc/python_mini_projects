@@ -18,7 +18,7 @@ def main():
     noun = raw_input("Enter a noun: ")
     print "Here's your Mad Libs story!"
     print ""
-    print "One day, " + name_person + " was walking to school when " + gender + \
+    print "One day, " + capitalize_first_letter(name_person) + " was walking to school when " + gender + \
     " saw a " + adjective + " " + noun + "." + "\n" \
     + capitalize_first_letter(gender) + " tripped over the " + noun + " and fell into a puddle." + "\n" \
     + "\'Oh no!\' " + name_person + " said. \'I guess I'll have to go home and change.\'" 
